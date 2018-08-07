@@ -59,3 +59,14 @@ and consume them with
 ```
 python chat/client.py
 ```
+
+## Example Output
+
+```
+[1533651810] <hello> Hello $MSFT, are you doing better than $FB
+[1533651810] ($MSFT) Microsoft Corp. $108.69 0.56 (0.52%) | Day Range: $108.17 - $109.10
+[1533651810] ($FB) Facebook, Inc. $186.46 0.77 (0.42%) | Day Range: $186.01 - $188.30
+[1533651844] <hello> $FB $GOOG
+[1533651844] ($FB) Facebook, Inc. $186.60 0.91 (0.49%) | Day Range: $186.01 - $188.30
+[1533651844] ($GOOG) Alphabet, Inc. $1,246.94 22.17 (1.81%) | Day Range: $1,236.78 - $1,247.16
+```
