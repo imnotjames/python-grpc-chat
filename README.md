@@ -2,6 +2,14 @@ Python 3 GRPC server to do basic chat, with requests to pull in stock informatio
 
 ## Installation
 
+Install [Poetry](https://github.com/sdispater/poetry) with
+
+```
+curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
+```
+
+Then install the dependencies using poetry
+
 ```
 poetry install
 ```
