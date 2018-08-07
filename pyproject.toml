@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "chat"
+version = "0.1.0"
+description = ""
+authors = ["James Ward <james@notjam.es>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "3.7"
+grpcio = "^1.14"
+grpcio_tools = "^1.14"
+googleapis-common-protos = "^1.5"
+requests = "^2.19"
+
+[tool.poetry.dev-dependencies]
+pytest = "^3.7"
+pytest-cov = "^2.5"
+pytest-mock = "^1.10"
+requests-mock = "^1.5"
+
+[tool.poetry.scripts]
+update_grpc = "helpers.update_grpc:main"
+serve = "chat:serve"
+consume = "chat:consume"
+produce = "chat:produce"
+test = "tests:main"

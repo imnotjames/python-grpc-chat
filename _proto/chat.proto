@@ -1,0 +1,74 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+package chat;
+
+service Chat {
+  rpc Login(LoginRequest) returns (LoginResponse) {}
+  rpc Logout(LogoutRequest) returns (LogoutResponse) {}
+
+  rpc Members(MemberRequest) returns (stream Member) {}
+
+  rpc SendMessage(SendMessageRequest) returns (google.protobuf.Empty) {}
+
+  rpc Stream(StreamRequest) returns (stream StreamResponse) {}
+}
+
+message Session {
+  string id = 1;
+}
+
+message LoginRequest {
+  string password = 1;
+  string username = 2;
+}
+
+message LoginResponse {
+  Session session = 1;
+}
+
+message LogoutRequest {
+  Session session = 1;
+}
+
+message LogoutResponse {}
+
+message Member {
+  string name = 1;
+}
+
+message MembersList {
+  repeated Member members = 1;
+}
+
+message MemberRequest {
+  Session session = 1;
+}
+
+message SendMessageRequest {
+  Session session = 1;
+  string text = 2;
+}
+
+message StreamRequest {
+  Session session = 1;
+}
+
+message Stock {
+    string symbol = 1;
+    string name = 2;
+    float change = 3;
+    float percent_change = 4;
+    float price = 5;
+    float high = 6;
+    float low = 7;
+}
+
+message StreamResponse {
+  google.protobuf.Timestamp timestamp = 1;
+  string username = 2;
+  string text = 3;
+  repeated Stock stock = 4;
+}
